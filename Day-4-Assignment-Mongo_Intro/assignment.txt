@@ -1,0 +1,17 @@
+ mongo
+ db
+ show dbs
+ use assignment
+ db.createCollection("users")
+ db.users.insert
+ db.users.insertMany
+ db.users.find({})
+ db.users.find({"_id" : ObjectId("622765326706219526355d41")})
+ db.users.update({"_id" : ObjectId("6227678a6706219526355d42")},{$set:{"email":"shubhidubey"}})
+ db.users.update({},{$set:{"country":"india"}})
+ db.users.updateMany({},{$set:{"country":"india"}})
+ db.users.remove({"_id" : ObjectId("622765326706219526355d41")})
+ db.users.remove({})
+ db.users.deleteOne({"_id" : ObjectId("622772ef6706219526355d55")})
+ db.users.deleteMany({"age":23})
+ db.users.find().pretty()
