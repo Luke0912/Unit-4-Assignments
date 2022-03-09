@@ -1,3 +1,16 @@
- mongo
- db
- 
+mongo
+db
+show dbs
+use day2
+show collections
+db.assignment.count()
+db.assignment.find({movie_name:{$eq:"movie_name"}}).pretty()
+db.assignment.find({movie_name:{$ne:"movie_name"}}).pretty()
+db.assignment.find({budget:{$gte:"$2000"}}).pretty()
+db.assignment.find({budget:{$lte:"$2000"}}).pretty()
+db.assignment.find({$nor:[{production_year:{$gt:"12/12/1999"}},{budget:{$gt:"$20000"}}]}).pretty()
+db.assignment.find({$or:[{production_year:{$gt:"12/12/1999"}},{budget:{$gt:"$10000"}}]}).pretty()
+db.assignment.find({production_year:{$gt:"1/1/2000,$lt:30/12/2010}}).pretty()
+db.assignment.find({}).sort{production_year:1,movies_name:1}).pretty()
+db.assignment.find({}).sort({production_year:1,movies_name:-1}).pretty()
+db.assignment.find({},{movies_name:0,_id:1}).skip(10).limit(5).pretty()
